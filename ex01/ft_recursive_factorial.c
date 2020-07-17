@@ -6,29 +6,19 @@
 /*   By: blsiband <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 12:11:22 by blsiband          #+#    #+#             */
-/*   Updated: 2020/07/14 12:17:55 by blsiband         ###   ########.fr       */
+/*   Updated: 2020/07/17 12:44:37 by blsiband         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
+#include <stdio.h>
 
-int fn(int a)
+int ft_recursive_factorial(int nb)
 { 
-	if (a<=3)
-	{
-		a +=1;
-		write(1, &a, 1);
-		fn(a);
+	if (nb < 0)
+		return (0);
+	if(nb == 0 || nb == 1)
+		return (1);
 
-		return (0);
-	}
-	else
-	{
-		return (0);
-	}
+		return nb * ft_recursive_factorial(nb - 1);
 }
 
-int main()
-{
-	fn (0);
-	return (0);
-}
